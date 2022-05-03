@@ -115,6 +115,7 @@ public class Colecciones4 {
             }
         });
         mostrarPeliculas(peliculas);
+        
     }
     
     
