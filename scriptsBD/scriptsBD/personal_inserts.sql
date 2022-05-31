@@ -40,6 +40,8 @@ INSERT INTO `departamentos` VALUES (4100,'MANTENIMIENTO','BARCELONA','16.759.060
 INSERT INTO `departamentos` VALUES (4200,'MANTENIMIENTO','VALENCIA','16.759.060');
 INSERT INTO `departamentos` VALUES (4300,'MANTENIMIENTO','MADRID','16.759.060');
 
+SELECT * FROM departamentos;
+
 -- Insertar datos en la tabla `empleados`
 
 INSERT INTO `empleados` VALUES (222,'José Giraldo','M','1985-01-20','2000-11-01',1200000,400000,'Asesor','22.222.222',3500);
@@ -68,3 +70,66 @@ INSERT INTO `empleados` VALUES (338,'Abel Gómez','M','1939-12-24','2000-10-01',
 INSERT INTO `empleados` VALUES (689,'Mario Llano','M','1945-08-30','1990-05-16',2250000,2500000,'Vendedor','31.178.144',2300);
 INSERT INTO `empleados` VALUES (785,'Joaquín Rosas','M','1947-07-07','1990-05-16',2250000,2500000,'Vendedor','31.178.144',2200);
 INSERT INTO `empleados` VALUES (898,'Iván Duarte','M','1955-08-12','1998-05-16',1050000,200000,'Mecánico','333.333.333',4100);
+
+-- 1)
+SELECT * FROM empleados;
+
+-- 2)
+SELECT * FROM departamentos;
+
+-- 3)
+SELECT nombre_depto FROM departamentos;
+
+-- 4)
+SELECT nombre, sal_emp FROM empleados;
+
+-- 5)
+SELECT comision_emp FROM empleados;
+
+-- 6)
+SELECT * FROM empleados WHERE cargo_emp = "Secretaria";
+
+-- 7)
+SELECT * FROM empleados WHERE cargo_emp = "Vendedor" ORDER BY nombre asc;
+
+-- 8)
+SELECT nombre, cargo_emp,sal_emp FROM empleados ORDER BY sal_emp asc;
+
+-- 9)
+SELECT nombre,cargo_emp FROM empleados;
+
+-- 10)
+SELECT sal_emp,comision_emp FROM empleados WHERE id_depto = "2000" ORDER BY comision_emp asc;
+
+-- 11)
+SELECT nombre,sal_emp+comision_emp+500 FROM empleados WHERE id_depto = "3000" ORDER BY nombre asc;
+
+-- 12)
+SELECT * FROM empleados WHERE nombre LIKE "j%";
+
+-- 13)
+SELECT nombre,sal_emp,comision_emp,sal_emp+comision_emp FROM empleados WHERE comision_emp > "1000";
+
+-- 14)
+SELECT nombre,sal_emp,comision_emp,sal_emp+comision_emp FROM empleados WHERE comision_emp = NULL;
+
+-- 15)
+SELECT * FROM empleados WHERE sal_emp<comision_emp;
+
+-- 16)
+SELECT * FROM empleados WHERE comision_emp <= 0.3*sal_emp;
+
+-- 17)
+SELECT * FROM empleados WHERE nombre NOT LIKE "%ma%";
+
+-- 18)
+SELECT * FROM departamentos WHERE nombre_depto = "Ventas";
+
+-- 19)
+SELECT * FROM departamentos WHERE nombre_depto != "Ventas" AND nombre_depto != "Investigacion" AND nombre_depto != "Mantenimiento";
+
+-- 20)
+
+
+
+
