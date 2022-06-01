@@ -18558,3 +18558,55 @@ INSERT INTO partidos VALUES (15657,'Suns','Hornets',68,65,'07/08');
 INSERT INTO partidos VALUES (15658,'Suns','Spurs',105,157,'07/08');
 INSERT INTO partidos VALUES (15659,'Suns','Rockets',105,57,'07/08');
 INSERT INTO partidos VALUES (15660,'Suns','Mavericks',69,144,'07/08');
+
+-- 1. Mostrar el nombre de todos los jugadores ordenados alfabéticamente. 
+select nombre from jugadores order by nombre;
+
+-- 2. Mostrar el nombre de los jugadores que sean pivots (‘C’) y que pesen más de 200 libras, ordenados por nombre alfabéticamente. 
+select nombre from jugadores where posicion = "c" and peso > 200 order by nombre;
+
+-- 3. Mostrar el nombre de todos los equipos ordenados alfabéticamente. 
+select nombre from equipos order by nombre;
+
+-- 4. Mostrar el nombre de los equipos del este (East).
+select nombre from equipos where conferencia = "east";
+
+-- 5. Mostrar los equipos donde su ciudad empieza con la letra ‘c’, ordenados por nombre.
+select * from equipos where ciudad like "c%" order by nombre;
+
+-- 6. Mostrar todos los jugadores y su equipo ordenados por nombre del equipo.
+select nombre, nombre_equipo from jugadores order by nombre_equipo;
+
+-- 7. Mostrar todos los jugadores del equipo “Raptors” ordenados por nombre. 
+select nombre, nombre_equipo from jugadores where nombre_equipo = "raptors" order by nombre;
+
+-- 8. Mostrar los puntos por partido del jugador ‘Pau Gasol’.
+select Puntos_por_partido from estadisticas e ,jugadores j where j.codigo = e.jugador and j.nombre = "Pau Gasol";
+
+-- 9. Mostrar los puntos por partido del jugador ‘Pau Gasol’ en la temporada ’04/05′. 
+select Puntos_por_partido,temporada from estadisticas e ,jugadores j where j.codigo = e.jugador and j.nombre = "Pau Gasol" and e.temporada = "04/05";
+
+-- 10. Mostrar el número de puntos de cada jugador en toda su carrera.
+select j.nombre, sum(e.Puntos_por_partido) from estadisticas e ,jugadores j where j.codigo = e.jugador group by e.jugador;
+
+-- 11. Mostrar el número de jugadores de cada equipo. 
+select count(*),nombre_equipo from jugadores group by nombre_equipo;
+
+-- 12. Mostrar el jugador que más puntos ha realizado en toda su carrera.
+select j.nombre,sum(e.Puntos_por_partido) as suma from estadisticas e ,jugadores j where j.codigo = e.jugador group by e.jugador order by suma desc limit 1;
+
+-- 13. Mostrar el nombre del equipo, conferencia y división del jugador más alto de la NBA. 
+select * 
+from jugadores j, equipos e
+where j.Nombre_equipo = e.Nombre
+order by j.altura desc
+limit 1;
+
+-- 14. Mostrar la media de puntos en partidos de los equipos de la división Pacific.
+select *,(puntos_local+puntos_visitante)/2
+from estadisticas es, partidos p, equipos e
+where es.temporada = p.temporada
+and (p.equipo_local or p.equipo_visitante) = e.nombre
+and e.division = "pacific"
+group by p.codigo;
+
