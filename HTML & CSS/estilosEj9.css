@@ -1,0 +1,63 @@
+h1 {
+    color: #008080;
+}
+
+p strong {
+    color: red;
+}
+
+.destacado {
+    color: #ffb73d;
+}
+
+h2 {
+    color: blue;
+}
+
+p a em {
+    color: blue;
+}
+
+p a {
+    color: red;
+    text-decoration: underline;
+}
+
+p .especial {
+    color: #9c3b9c;
+}
+
+table,
+td,
+th {
+    border: black 1px solid;
+    border-spacing: 0px;
+}
+
+tr .especial {
+    color: #ffb73d;
+}
+
+td {
+    color: green;
+}
+
+td strong {
+    color: #ffb73d;
+}
+
+th {
+    color: red;
+}
+
+#adicional p {
+    color: #acad61;
+}
+
+#adicional p #especial {
+    color: #9c3b9c;
+}
+
+#adicional p a {
+    color: green;
+}

@@ -1,0 +1,26 @@
+body{
+    background-color: black;
+}
+
+h1{
+    color: bisque;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+}
+
+h2{
+    color: bisque;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+}
+
+p{
+    color: bisque;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: left;
+}
+
+ol{
+    color: bisque;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}

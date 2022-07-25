@@ -1,0 +1,30 @@
+body{
+    background-color: midnightblue;
+}
+
+h1{
+    color: aliceblue;
+}
+
+ul{
+    color: aliceblue;
+    font-size: larger;
+}
+
+a{
+    color: #CC0000;
+    font-size: larger;
+}
+
+a:hover{
+    color: #FFF;
+    background-color: #CC0000;
+}
+
+a:active{
+    color: aquamarine;
+}
+
+a:visited{
+    color:#CCC;
+}
