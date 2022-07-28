@@ -54,3 +54,39 @@ function ejercicio18(valores) {
     window.alert(`a) El mayor es: ${max}`);
 }
 //ejercicio18(valores);
+
+
+//Ejercicio23
+//window.onload = ejercicio23;
+
+function ejercicio23() {
+    const texto = document.getElementById("parrafo").textContent;
+    var palabras = texto.split(" ");
+    var parrafoFinal = [];
+    for (let palabra of palabras){
+        if (palabra.length > 8) {
+            console.log("mayor a 8")
+            palabra = "<mark>" + palabra + "</mark>";
+        }
+        parrafoFinal.push(palabra)
+    }
+    const p = document.getElementById("parrafo")
+    p.innerHTML = parrafoFinal.join(" ");
+}
+
+
+
+//Ejercicio24
+window.onload = function(){
+    document.getElementById("calcular").onclick = function (){
+        let radio = document.getElementById("radio").value;
+        
+        area = 3.14 * radio ** 2;
+        perimetro = 2 * 3.14 * radio;
+        //window.alert(radio);
+        let a = document.getElementById("area");
+        let p = document.getElementById("perimetro");
+        a.textContent = `Area: ${area}`;
+        p.textContent = `Perimetro: ${perimetro}`; 
+    };
+};
